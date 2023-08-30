@@ -71,22 +71,25 @@ window.onload = () => {
 }
 
 /**
- * Affiiche de résultat
+ * Affiche de résultat
  */
 function end(){
     question_element.innerText = question_success + '/' + question_count
 }
 
 /**
- * @param {int} answer
+ * @param {Element} button
  */
 function check_answer(button){
     const question = questions[question_index]
 
+    // noinspection JSUnresolvedVariable
     if (parseInt(button.dataset.answer) === question.response){
         question_success++
+        // noinspection JSUnresolvedVariable
         button.style.background = "green"
     }else{
+        // noinspection JSUnresolvedVariable
         button.style.background = "red"
 
         let response = document.querySelector(`#question button[data-answer='${question.response.toString()}']`)
